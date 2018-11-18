@@ -70,7 +70,7 @@
 
 	<div id="pageServer" class="pages">
 
-		<p><input type="text" value="" id="myIp" /> Port <input type="text" id="myPort" value="1100" /></p>
+		<p><input style="width:140px;" type="text" value="" id="myIp" /> Port <input style="width:40px;" type="text" id="myPort" value="1100" /></p>
 
 
 	</div>
@@ -111,18 +111,29 @@
 	<script type="text/javascript" src="js/Canvas.js"></script>
 	<script type="text/javascript" src="js/Game.js"></script>
 	<script type="text/javascript">
-		window.onload = function() {
+		document.addEventListener('deviceready', function() {
 
 			oPages.gotoSplashScreen();
 			oGame.init(window.innerWidth, window.innerHeight);
 
-			networkinterface.getWiFiIPAddress(function(ip) {
-				oGame.myIp = ip;
+			if (networkinterface) {
+				networkinterface.getWiFiIPAddress(function(ip, subnet) {
 
+						if (typeof ip === 'object') {
+							oGame.myIp = ip.ip;
+						} else {
+							oGame.myIp = ip;
+						}
 
-			});
+					},
+					function(error) {
+						alert('Error:' + error);
+					});
+			} else {
+				alert('networkinterface not init');
+			}
 
-		}
+		}, false);
 	</script>
 </body>
 
