@@ -34,10 +34,10 @@
     "cordova-plugin-network-information": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
-    "cordova-plugin-vibration": {
+    "cordova-plugin-networkinterface": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     },
-    "cordova-plugin-networkinterface": {
+    "cordova-plugin-vibration": {
       "PACKAGE_NAME": "com.phonegap.helloworld"
     }
   },

@@ -1,0 +1,11 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "BombyP",
+  "short_name": "BombyP",
+  "version": "com.phonegap.helloworld",
+  "description": "Bomberman-like writed with phonegap",
+  "author": "Michael Bertocchi",
+  "icons": [],
+  "start_url": "index.html"
+}
